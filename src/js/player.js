@@ -599,6 +599,7 @@ vjs.Player.prototype.requestFullScreen = function(){
       // If cancelling fullscreen, remove event listener.
       if (this.isFullScreen === false) {
         vjs.off(document, requestFullScreen.eventName, arguments.callee);
+        this.trigger('fullscreenchange');
       }
 
     }));
